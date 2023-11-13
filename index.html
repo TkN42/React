@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css" />
+    <script src="lib/script.js"></script>
+  </head>
+
+  <body>
+    <h1>Hesap Makinesi</h1>
+
+    <table>
+      <tr>
+        <td colspan="3">
+          <input type="text" id="ekran" readonly />
+        </td>
+        <td>
+          <button onclick="temizle()">C</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="yaz('1')">1</button>
+        </td>
+        <td>
+          <button onclick="yaz('2')">2</button>
+        </td>
+        <td>
+          <button onclick="yaz('3')">3</button>
+        </td>
+        <td>
+          <button onclick="yaz('/')">/</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="yaz('4')">4</button>
+        </td>
+        <td>
+          <button onclick="yaz('5')">5</button>
+        </td>
+        <td>
+          <button onclick="yaz('6')">6</button>
+        </td>
+        <td>
+          <button onclick="yaz('-')">-</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="yaz('7')">7</button>
+        </td>
+        <td>
+          <button onclick="yaz('8')">8</button>
+        </td>
+        <td>
+          <button onclick="yaz('9')">9</button>
+        </td>
+        <td>
+          <button onclick="yaz('+')">+</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="yaz('.')">.</button>
+        </td>
+        <td>
+          <button onclick="yaz('0')">0</button>
+        </td>
+        <td>
+          <button onclick="hesapla('=')">=</button>
+        </td>
+        <td>
+          <button onclick="yaz('*')">*</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
