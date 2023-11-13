@@ -1,2 +1,2 @@
 # React
-Üretken Akademi - Meram Belediyesi - React Kursu
+Üretken Akademi - Meram Belediyesi - Mega Yazılım - React Kursu
