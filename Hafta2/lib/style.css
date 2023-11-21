@@ -1,0 +1,209 @@
+body {
+  height: 800px;
+  width: 800px;
+  margin: auto;
+}
+
+.main{
+  background-color: aliceblue;
+}
+
+.kolay, .orta, .zor{
+  cursor: pointer;
+}
+
+iconify-icon{
+  cursor: pointer;
+}
+
+.control {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  background-color: aliceblue;
+  border: 1px solid #ccc;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont {
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  background-color: aliceblue;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.cont:hover{
+  background-color: lightblue;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  background-color: aliceblue;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.number > div {
+  width: 75px;
+  height: 75px;
+  background-color: #ccc;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.num:hover {
+  background-color: lightblue;
+}
+
+.new {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.new:hover{
+  background-color: lightblue;
+}
+
+.sudoku-play{
+  height: 480px;
+  width: 300px;
+  margin-left: 490px;
+  background-color: aliceblue;
+}
+
+h1{
+  text-align: center;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+}
+
+.ust1 {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ust1 h3 {
+  margin-right: 10px; 
+}
+
+.ust1 a {
+  margin-right: 10px; 
+  text-decoration: none;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.ust1 a:hover {
+  background-color: lightblue;
+}
+
+.ust1 a.active {
+  background-color: lightblue;
+  color: black;
+}
+
+.alt{
+  margin-top: 500px;
+}
+
+.sudoku-board {
+  width: 471px;
+  height: 471px;
+  margin: 0px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  vertical-align: center;
+  position: absolute;
+}
+
+.sudoku-block {
+  width: 150px;
+  height: 150px;
+  margin: 1px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: center;
+  position: relative;
+}
+
+#bir, #uc, #bes, #yedi, #dokuz{
+  background-color: wheat;
+}
+
+.sudoku-cell {
+  width: 50px;
+  height: 50px;
+  margin: 0px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.solve-button {
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.ust2 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-left: 500px;
+}
+
+.ust2 h3 {
+  margin-right: 10px; 
+}
+
+.timer {
+  width: 50px;
+  height: 18px;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  align-items: center;
+  vertical-align: center;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css" />
+    <script src="lib/script.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <title>Sudoku</title>
+  </head>
+
+  <div class="main">
+
+    <h1>Sudoku</h1>
+
+    <div class="ust1">
+      <h3>Zorluk:</h3>
+      <a class="kolay active" onclick="selectDifficulty('kolay')"> Kolay </a>
+      <a class="orta" onclick="selectDifficulty('orta')"> Orta </a>
+      <a class="zor" onclick="selectDifficulty('zor')"> Zor </a>
+    </div>
+    
+
+  <div class="ust2">
+    <h3>Hatalar:</h3>
+    <a class="hata" id="errorCount">0</a>
+
+    <h3>Puan:</h3>
+    <a class="point">0</a>
+
+    <h3>Süre:</h3>
+    <div id="timer" class="timer">00:00</div>
+
+    <iconify-icon icon="material-symbols:pause"></iconify-icon>
+    <iconify-icon icon="mdi:play"></iconify-icon>
+  </div>
+
+  <br />
+  
+  <div class="sudoku-board">
+    <div class="sudoku-block" id="bir">
+      <div class="sudoku-cell" data-blok="1" data-satir="1" data-sutun="1">1-1</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="2" data-sutun="1">2-1</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="3" data-sutun="1">3-1</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="1" data-sutun="2">1-2</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="2" data-sutun="2">2-2</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="3" data-sutun="2">3-2</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="1" data-sutun="3">1-3</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="2" data-sutun="3">2-3</div>
+      <div class="sudoku-cell" data-blok="1" data-satir="3" data-sutun="3">3-3</div>
+    </div>
+    <div class="sudoku-block" id="iki">
+      <div class="sudoku-cell" data-blok="2" data-satir="4" data-sutun="1">4-1</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="5" data-sutun="1">5-1</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="6" data-sutun="1">6-1</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="4" data-sutun="2">4-2</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="5" data-sutun="2">5-2</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="6" data-sutun="2">6-2</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="4" data-sutun="3">4-3</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="5" data-sutun="3">5-3</div>
+      <div class="sudoku-cell" data-blok="2" data-satir="6" data-sutun="3">6-3</div>
+    </div>
+    <div class="sudoku-block" id="uc">
+      <div class="sudoku-cell" data-blok="3" data-satir="7" data-sutun="1">7-1</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="8" data-sutun="1">8-1</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="9" data-sutun="1">9-1</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="7" data-sutun="2">7-2</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="8" data-sutun="2">8-2</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="9" data-sutun="2">9-2</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="7" data-sutun="3">7-3</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="8" data-sutun="3">8-3</div>
+      <div class="sudoku-cell" data-blok="3" data-satir="9" data-sutun="3">9-3</div>
+    </div>
+    <div class="sudoku-block" id="dort">
+      <div class="sudoku-cell" data-blok="4" data-satir="1" data-sutun="4">1-4</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="2" data-sutun="4">2-4</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="3" data-sutun="4">3-4</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="1" data-sutun="5">1-5</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="2" data-sutun="5">2-5</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="3" data-sutun="5">3-5</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="1" data-sutun="6">1-6</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="2" data-sutun="6">2-6</div>
+      <div class="sudoku-cell" data-blok="4" data-satir="3" data-sutun="6">3-6</div>
+    </div>
+    <div class="sudoku-block" id="bes">
+      <div class="sudoku-cell" data-blok="5" data-satir="4" data-sutun="4">4-4</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="5" data-sutun="4">5-4</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="6" data-sutun="4">6-4</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="4" data-sutun="5">4-5</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="5" data-sutun="5">5-5</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="6" data-sutun="5">6-5</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="4" data-sutun="6">4-6</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="5" data-sutun="6">5-6</div>
+      <div class="sudoku-cell" data-blok="5" data-satir="6" data-sutun="6">6-6</div>
+    </div>
+    <div class="sudoku-block" id="alti">
+      <div class="sudoku-cell" data-blok="6" data-satir="7" data-sutun="4">7-4</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="8" data-sutun="4">8-4</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="9" data-sutun="4">9-4</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="7" data-sutun="5">7-5</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="8" data-sutun="5">8-5</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="9" data-sutun="5">9-5</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="7" data-sutun="6">7-6</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="8" data-sutun="6">8-6</div>
+      <div class="sudoku-cell" data-blok="6" data-satir="9" data-sutun="6">9-6</div>
+    </div>
+    <div class="sudoku-block" id="yedi">
+      <div class="sudoku-cell" data-blok="7" data-satir="1" data-sutun="7">1-7</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="2" data-sutun="7">2-7</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="3" data-sutun="7">3-7</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="1" data-sutun="8">1-8</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="2" data-sutun="8">2-8</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="3" data-sutun="8">3-8</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="1" data-sutun="9">1-9</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="2" data-sutun="9">2-9</div>
+      <div class="sudoku-cell" data-blok="7" data-satir="3" data-sutun="9">3-9</div>
+    </div>
+    <div class="sudoku-block" id="sekiz">
+      <div class="sudoku-cell" data-blok="8" data-satir="4" data-sutun="7">4-7</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="5" data-sutun="7">5-7</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="6" data-sutun="7">6-7</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="4" data-sutun="8">4-8</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="5" data-sutun="8">5-8</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="6" data-sutun="8">6-8</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="4" data-sutun="9">4-9</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="5" data-sutun="9">5-9</div>
+      <div class="sudoku-cell" data-blok="8" data-satir="6" data-sutun="9">6-9</div>
+    </div>
+    <div class="sudoku-block" id="dokuz">
+      <div class="sudoku-cell" data-blok="9" data-satir="7" data-sutun="7">7-7</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="8" data-sutun="7">8-7</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="9" data-sutun="7">9-7</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="7" data-sutun="8">7-8</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="8" data-sutun="8">8-8</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="9" data-sutun="8">9-8</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="7" data-sutun="9">7-9</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="8" data-sutun="9">8-9</div>
+      <div class="sudoku-cell" data-blok="9" data-satir="9" data-sutun="9">9-9</div>
+    </div>
+  </div>
+
+  <div class="sudoku-play">
+    <div class="control">
+      <div class="cont">
+        <iconify-icon icon="material-symbols:undo"></iconify-icon>
+        Geri Al
+      </div>
+      <div class="cont">
+        <iconify-icon icon="ph:eraser"></iconify-icon>
+        Sil
+      </div>
+      <div class="cont">
+        <iconify-icon icon="ph:pencil"></iconify-icon>
+        Not
+      </div>
+      <div class="cont">
+        <iconify-icon icon="fluent-mdl2:hint-text"></iconify-icon>
+        İpucu
+      </div>
+    </div>
+    <div class="number">
+      <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+      <div class="num">5</div>
+      <div class="num">6</div>
+      <div class="num">7</div>
+      <div class="num">8</div>
+      <div class="num">9</div>
+    </div>
+  <div class="new">Yeni Oyun</div>
+
+  </div>
+
+  </div>
+
+</html>
