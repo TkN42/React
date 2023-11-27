@@ -1,0 +1,1 @@
+mustafafurkantekin.com.tr
