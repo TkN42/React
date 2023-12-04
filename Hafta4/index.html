@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            width: 50%;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 800px;
+            justify-content: space-around;
+        }
+
+        .container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container:hover {
+            opacity: 0.8;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+            color: white;
+            font-size: 20px;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        #modal img {
+            width: 500px;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+
+        #modal-icons {
+            margin-top: 20px;
+        }
+
+        #modal-icons i {
+            margin: 0 5px;
+        }
+
+        @media (max-width: 600px) {
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                width: 100%;
+                max-width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Instagram-Clone</h1>
+    <hr>
+    <div class="image-container" id="imageGallery"></div>
+    <div id="modal"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var imageGallery = document.getElementById('imageGallery');
+            var modal = document.getElementById('modal');
+
+            function adjustImageLayout() {
+                var containers = document.querySelectorAll('.container');
+                var screenWidth = window.innerWidth;
+
+                containers.forEach(function (container) {
+                    if (screenWidth <= 800) {
+                        container.style.width = '100%';
+                        container.style.maxWidth = 'calc(100% - 20px)';
+                    } else {
+                        container.style.width = 'calc(33.333% - 20px)';
+                        container.style.maxWidth = '';
+                    }
+                });
+            }
+
+            window.addEventListener('resize', function () {
+                adjustImageLayout();
+            });
+
+            for (var i = 0; i < 15; i++) {
+                var imageUrl = 'https://source.unsplash.com/random/300x300?' + i;
+                var container = document.createElement('div');
+                container.className = 'container';
+
+                var img = document.createElement('img');
+                img.src = imageUrl;
+
+                var middle = document.createElement('div');
+                middle.className = 'middle';
+
+                var text = document.createElement('div');
+                text.className = 'text';
+                var randomNum1 = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+                var randomNum2 = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+                text.innerHTML = `<i class="fas fa-heart heart-icon">&nbsp;${randomNum1}</i> &nbsp; <i class="fas fa-comment comment-icon">&nbsp;${randomNum2}</i> `;
+
+                middle.appendChild(text);
+                container.appendChild(img);
+                container.appendChild(middle);
+
+                container.addEventListener('click', function (event) {
+                    var clickedImageSrc = event.currentTarget.querySelector('img').src;
+                    var likes = event.currentTarget.querySelector('.fa-heart').innerText.trim();
+                    var comments = event.currentTarget.querySelector('.fa-comment').innerText.trim();
+                    openModal(clickedImageSrc, likes, comments);
+                });
+
+                imageGallery.appendChild(container);
+            }
+
+            modal.addEventListener('click', closeModal);
+            adjustImageLayout();
+        });
+
+        function openModal(imageSrc, likes, comments) {
+            var modal = document.getElementById('modal');
+            modal.innerHTML = `<img src="${imageSrc}" alt="Modal Image">`;
+
+            var modalIcons = document.createElement('div');
+            modalIcons.id = 'modal-icons';
+            modalIcons.innerHTML = `<i class="fas fa-heart"> &nbsp;${likes}</i> &nbsp; <i class="fas fa-comment"> &nbsp;${comments}</i> `;
+            modal.appendChild(modalIcons);
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('modal');
+            modal.innerHTML = '';
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
