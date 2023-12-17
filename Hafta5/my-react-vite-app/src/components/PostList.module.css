@@ -1,0 +1,10 @@
+.postList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .postItem {
+    margin-bottom: 20px;
+  }
+
+  
