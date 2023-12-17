@@ -12,9 +12,9 @@ Hafta 5 - Ödev
 
 ----------------------------------------------------------------
 
-npm create vite@latest my-react-vite-app
-√ Select a framework: » React
-√ Select javascript
-cd my-react-vite-app
-npm install
-npm run dev
+npm create vite@latest my-react-vite-app,
+√ Select a framework: » React,
+√ Select javascript,
+cd my-react-vite-app,
+npm install,
+npm run dev,
