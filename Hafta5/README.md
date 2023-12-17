@@ -7,3 +7,14 @@ Hafta 5 - Ödev
 çıktı :
 
 ![Ekran Alıntısı](https://github.com/TkN42/React/assets/29886553/4a38183a-9ab9-49d8-ac4f-52bd75ac41db)
+
+
+
+----------------------------------------------------------------
+
+npm create vite@latest my-react-vite-app
+√ Select a framework: » React
+√ Select javascript
+cd my-react-vite-app
+npm install
+npm run dev
