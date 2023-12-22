@@ -14,11 +14,17 @@ Hafta 6 - Ödev
 
 
 npm create vite@latest my-react-vite-app,
+
 √ Select a framework: » React,
+
 √ Select javascript,
+
 cd my-react-vite-app,
+
 npm install,
+
 npm i @picocss/pico,
+
 npm install bootstrap,
 
 npm run dev
