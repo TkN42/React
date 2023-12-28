@@ -1,0 +1,90 @@
+.task {
+  width: 100%;
+  background: #262626;
+  border: 1px solid #333333;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer; 
+}
+
+.editing{
+  justify-content: center;
+}
+
+.task p {
+  font-size: 14px;
+  line-height: 19px;
+  color: #F2F2F2;
+  margin-right: auto;
+  
+}
+
+p.textCompleted {
+  color: #808080;
+  text-decoration: line-through;
+}
+
+.checkContainer {
+  width: 18px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.checkContainer div {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 2px solid #4EA8DE;
+}
+
+.checkContainer svg {
+  width: 100%;
+  height: 100%;
+  color: #5E60CE;
+}
+
+.deleteButton, .editButton {
+  background: none;
+  border: none;
+  color: #808080;
+  cursor: pointer; 
+}
+
+.task.editing button {
+  background: none;
+  border: none;
+  color: #808080;
+  cursor: pointer;
+  margin-right: 8px; 
+  float: right;
+}
+
+.task.editing input {
+  font-size: 14px;
+  line-height: 19px;
+  color: #F2F2F2;
+  background: #262626;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.task.editing .checkContainer,
+.task.editing .deleteButton,
+.task.editing .editButton {
+  display: none; 
+}
+
+.task.editing .saveButton,
+.task.editing .cancelButton {
+  background: none;
+  border: none;
+  color: #808080;
+  cursor: pointer;
+}
