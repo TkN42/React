@@ -1,4 +1,4 @@
-Hafta 7 - Ödev
+Hafta 7 - Ödev (react todo app)
 
 ![Odev](https://github.com/TkN42/React/assets/29886553/25c069de-4880-48d0-8bc5-c9bfa987891c)
 
