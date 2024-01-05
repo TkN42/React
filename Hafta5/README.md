@@ -1,4 +1,4 @@
-Hafta 5 - Ödev
+Hafta 5 - Ödev (react-blog)
 
 ![Ekran Alıntısı](https://github.com/TkN42/React/assets/29886553/c7d4ee2a-7f76-47c3-b94c-03b48eb5207b)
 
