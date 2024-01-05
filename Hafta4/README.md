@@ -1,4 +1,4 @@
-Hafta 4 - Ödev
+Hafta 4 - Ödev (instagram Clone)
 
 ![4](https://github.com/TkN42/React/assets/29886553/bfd3a1f7-83c4-40c5-8473-e3fcb13ae9ee)
 
