@@ -1,4 +1,4 @@
-Hafta 6 - Ödev
+Hafta 6 - Ödev (react conversion app)
 
 ![Odev](https://github.com/TkN42/React/assets/29886553/81391680-e7e3-4813-b995-f3108bcbb069)
 
